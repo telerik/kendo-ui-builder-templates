@@ -1,0 +1,20 @@
+{
+    widget: null,
+    options: {
+        title: "<%- title %>",
+        <% if (typeof width !== 'undefined') { %>
+        width: "<%- width %>",
+        <% } %>
+        <% if (typeof height !== 'undefined') { %>
+        height: "<%- height %>"
+        <% } %>
+
+    },
+    events: {
+        onClose: (e) => {
+            <% if (events.onClose) { %>
+                this['<%- events.onClose %>'](e);
+            <% } %>
+        }
+    }
+}

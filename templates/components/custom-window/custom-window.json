@@ -1,0 +1,104 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "custom-window",
+    "name": "custom-window",
+    "type": "object",
+    "description": "kendo.ui",
+    "category": "Custom",
+    "properties": {
+        "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The Id of the component",
+            "default": "",
+            "minLength": 1,
+            "order": 1
+        },
+        "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The name attribute which specifies the name of an element.",
+            "default": "",
+            "hiddenInComplexViews": true,
+            "order": 2
+        },
+        "html": {
+            "type": "string",
+            "title": "HTML",
+            "description": "Any valid html provided as string",
+            "default": "<div>Custom HTML Component</div>",
+            "editorType": "codeEditor",
+            "order": 3
+        },
+        "top": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "title": "Top",
+            "default": 0,
+            "order": 4
+        },
+        "left": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "title": "Left",
+            "default": 0,
+            "order": 5
+        },
+        "width": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "title": "Width",
+            "default": 100,
+            "order": 6
+        },
+        "height": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "title": "Height",
+            "default": 100,
+            "order": 7
+        },
+        "show": {
+            "type": "boolean",
+            "title": "Show",
+            "description": "Show/hide",
+            "default": true,
+            "order": 8
+        },
+        "events": {
+            "type": "object",
+            "title": "Events",
+            "description": "Specifies all available events for the component",
+            "properties": {
+                "onClose": {
+                    "type": "string",
+                    "title": "Close Event Function",
+                    "description": "This event fires when the window is closed",
+                    "default": ""
+                }
+            },
+            "order": 10
+        },
+        "annotations": {
+            "type": "object",
+            "hidden": true,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "default": "componentIdentifier"
+                }
+            }
+        }
+    },
+    "required": [
+        "id"
+    ]
+}
