@@ -76,3 +76,67 @@ config.exports.push(CustomWindow, WindowModule);
 @NgModule(config)
 export class SharedModule { }
 ```
+
+## Setup (AngularJS)
+
+1. Copy `custom-window/` folder inside `templates/components/` folder of your project
+
+
+2. Inside `app/src/scripts/extensions/` create a folder with the name of your component, in this case its name is `custom-window`. Here will reside the AngularJS template and controller.
+
+index.js
+
+```js
+'use strict';
+
+import template from './template.html';
+
+function directive() {
+    return {
+        restrict: 'E',
+        scope: true,
+        bindToController: {
+            id: '@',
+            widget: '=',
+            options: '=',
+            events: '=',
+        },
+        transclude: true,
+        controller: function() {
+            var vm = this;
+        },
+        controllerAs: 'vm',
+        templateUrl: template
+    };
+}
+
+export default directive;
+```
+
+```html
+<div id="{{vm.id}}"
+    kendo-window="vm.widget"
+    k-options="vm.options"
+    k-on-close="vm.events.onClose(kendoEvent)">
+    <ng-transclude></ng-transclude>
+</div>
+```
+
+3. Register the component in AngularJS.
+
+app/src/scripts/extensions/index.js
+
+```js
+'use strict';
+
+import angular from 'angular';
+
+// Import your custom modules here:
+import customWindow from './custom-window/index.js';
+
+export default angular.module('app.extensions.module', [
+    // Put your custom modules here:
+])
+.directive('customWindow', customWindow)
+.name;
+```
