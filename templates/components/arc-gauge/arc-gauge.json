@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "arc-gauge",
+  "name": "arc-gauge",
+  "type": "object",
+  "category": "Custom",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "../definitions/valid-component-id.json"
+        },
+        {
+          "type": "string",
+          "title": "Id",
+          "description": "The Id of the component",
+          "default": "",
+          "minLength": 1
+        }
+      ],
+      "order": 1
+    },
+    "defaultValue": {
+      "type": "number",
+      "title": "Default Value",
+      "default": 0,
+      "order": 2
+    },
+    "scale": {
+      "type": "object",
+      "title": "Scale",
+      "description": "Contains Scale options",
+      "properties": {
+        "min": {
+          "type": "integer",
+          "title": "Min",
+          "default": 0,
+          "order": 1
+        },
+        "max": {
+          "type": "integer",
+          "title": "Max",
+          "default": 100,
+          "order": 2
+        }
+      },
+      "order": 3
+    },
+    "model": {
+      "type": "string",
+      "title": "Model",
+      "default": "",
+      "editorType": "modelName",
+      "order": 4
+    },
+    "annotations": {
+      "type": "object",
+      "hidden": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "default": "componentIdentifier"
+        }
+      }
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

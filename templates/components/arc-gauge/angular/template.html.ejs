@@ -1,0 +1,10 @@
+<kb-arc-gauge
+    [config]="$config.components.<%- id %>"
+    [id]="'<%- id %>'"
+    <% if (meta.model) { %>
+    [value]="<%- typeof meta.modelName === 'undefined' ? '$dataModels' : meta.modelName %>.<%- meta.model %>"
+    <% } else { %>
+    [value]="<%- meta.defaultValue || 0 %>"
+    <% } %>
+>
+</kb-arc-gauge>
