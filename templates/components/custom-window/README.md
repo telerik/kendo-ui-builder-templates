@@ -143,7 +143,7 @@ export default angular.module('app.extensions.module', [
 
 ## References
 
-[Custom Templates](https://www.telerik.com/kendo-ui-builder/documentation/extension-points/custom-templates/)
-[Custom Components](https://www.telerik.com/kendo-ui-builder/documentation/extension-points/custom-templates/custom-components/)
-[Kendo Window for Angular](https://www.telerik.com/kendo-angular-ui/components/dialogs/window/)
-[Kendo Window for AngularJS](https://docs.telerik.com/kendo-ui/api/javascript/ui/window)
+- [Custom Templates](https://www.telerik.com/kendo-ui-builder/documentation/extension-points/custom-templates/)
+- [Custom Components](https://www.telerik.com/kendo-ui-builder/documentation/extension-points/custom-templates/custom-components/)
+- [Kendo Window for Angular](https://www.telerik.com/kendo-angular-ui/components/dialogs/window/)
+- [Kendo Window for AngularJS](https://docs.telerik.com/kendo-ui/api/javascript/ui/window)
