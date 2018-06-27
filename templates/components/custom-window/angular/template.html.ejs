@@ -1,0 +1,8 @@
+<custom-window
+    [config]="$config.components.<%- id %>"
+    [id]="'<%- id %>'"
+    <% if (meta.events.onClose) { %>
+    (close)="<%- meta.events.onClose %>($event)"
+    <% } %> >
+    <%- meta.html %>
+</custom-window>
