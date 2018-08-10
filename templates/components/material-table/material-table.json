@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "material-table",
+  "name": "material-table",
+  "type": "object",
+  "description": "Material Table widget schema",
+  "category": "Data Management",
+  "properties": {
+    "id": {
+      "allOf": [
+        {
+          "$ref": "../definitions/valid-component-id.json"
+        },
+        {
+          "type": "string",
+          "title": "Id",
+          "description": "The Id of the component",
+          "default": "",
+          "minLength": 1
+        }
+      ],
+      "order": 1
+    },
+    "dataSourceName": {
+      "type": "string",
+      "title": "Data Source",
+      "description": "The name of the data source to which the grid will be bound",
+      "default": "",
+      "editorType": "componentDataSource",
+      "minLength": 1,
+      "order": 2
+    },
+    "columns": {
+      "items": {
+        "properties": {
+          "field": {
+            "type": "string",
+            "title": "Field Name",
+            "description": "The field to which the column is bound",
+            "readonly": true,
+            "order": 1
+          },
+          "title": {
+            "type": "string",
+            "title": "Label",
+            "description": "The text that is displayed in the column header cell. If not set the field is used.",
+            "order": 2
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "field"
+            ]
+          }
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "title": "Grid Columns",
+      "uniqueItems": true,
+      "type": "array",
+      "editorType": "gridColumns",
+      "onMetaChange": "createColumns",
+      "order": 3
+    },
+    "annotations": {
+      "type": "object",
+      "hidden": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "default": "componentIdentifier"
+        }
+      }
+    },
+    "annotationRefs": {
+      "type": "object",
+      "hidden": true,
+      "properties": {
+        "dataSourceName": {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "default": "dataSourceName"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "dataSourceName",
+    "columns"
+  ]
+}

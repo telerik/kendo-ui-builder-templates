@@ -1,0 +1,17 @@
+<kb-material-table
+    [id]="'<%- id %>'"
+    [config]="$config.components.<%- id %>">
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="$dataServicesData['<%- meta.dataSourceName %>'] | async">
+            <%_ meta.columns.forEach(col => { -%>
+            <ng-container matColumnDef="<%- col.field %>">
+                <mat-header-cell *matHeaderCellDef><%- col.title %></mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.<%- col.field %>}}</mat-cell>
+            </ng-container>
+            <%_ }) -%>
+            <% var columnsString = '[\'' + meta.columns.map(col => col.field).join('\', \'') + '\']'; %>
+            <mat-header-row *matHeaderRowDef="<%- columnsString %>"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: <%- columnsString %>;"></mat-row>
+        </mat-table>
+    </div>
+</kb-material-table>

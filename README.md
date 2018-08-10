@@ -19,6 +19,7 @@ For both the AngularJS and Angular frameworks, the Builder supports templates fo
 | --- | --- | --- |
 | [Arc Gauge](https://github.com/telerik/kendo-ui-builder-templates/tree/master/templates/components/arc-gauge) | :x: | :white_check_mark: |
 | [Window](https://github.com/telerik/kendo-ui-builder-templates/tree/master/templates/components/custom-window) | :white_check_mark: | :white_check_mark: |
+| [Material Table](https://github.com/telerik/kendo-ui-builder-templates/tree/master/templates/components/material-table) | :x: | :white_check_mark: |
 
 ## Contributing
 
